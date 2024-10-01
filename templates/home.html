@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Listing</title>
+</head>
+<body>
+    <h1>Available Cars</h1>
+    <div class="car-list">
+        {% for car in cars %}
+        <div class="car-card">
+            <img src="{{ car.image.url }}" alt="{{ car.name }}">
+            <h2>{{ car.name }}</h2>
+            <p>{{ car.price }}</p>
+            <a href="{% url 'car_detail' car.id %}">View Details</a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
